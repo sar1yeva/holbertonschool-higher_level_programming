@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-str1, str2, str3 = "object-oriented ", "programming ", "with Python"
-print(str1 + str2 + str3)
+word = "object-oriented programming with Python"
+print(word[:7] + word[7:19] + word[19:])
 
