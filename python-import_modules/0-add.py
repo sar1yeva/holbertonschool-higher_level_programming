@@ -1,4 +1,8 @@
 #!/usr/bin/python3
-def add(a, b):
-    print(a+b)
-add(1,2)
+from add_0 import add
+
+if __name__ == "__main__":
+    a = 1
+    b = 2
+    print("{} + {} = {}".format(a, b, add(a, b)))
+__import__("0-add")
