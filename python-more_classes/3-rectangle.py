@@ -55,4 +55,3 @@ class Rectangle:
         for _ in range(self.height):
             lines.append("#" * self.width)
         return "\n".join(lines)
-
