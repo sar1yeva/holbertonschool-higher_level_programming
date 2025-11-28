@@ -1,56 +1,61 @@
 #!/usr/bin/env python3
 """
-Serialization and deserialization of custom Python objects using pickle.
+Task 01: Pickle serialization of a custom Python object.
+
+This module defines the CustomObject class that can be serialized to and
+deserialized from a file using the pickle module. It safely handles errors
+such as non-existent or corrupted files.
 """
 
 import pickle
 
 
 class CustomObject:
-    """A custom object with name, age, and is_student attributes."""
+    """Custom object with name, age, and student status attributes."""
 
     def __init__(self, name, age, is_student):
         """
         Initialize a CustomObject instance.
 
         Args:
-            name (str): The name of the person.
-            age (int): The age of the person.
-            is_student (bool): Whether the person is a student.
+            name (str): Name of the person.
+            age (int): Age of the person.
+            is_student (bool): Student status.
         """
         self.name = name
         self.age = age
         self.is_student = is_student
 
     def display(self):
-        """Print the attributes of the object in a readable format."""
+        """Print the object's attributes in a readable format."""
         print(f"Name: {self.name}")
         print(f"Age: {self.age}")
-        print(f"Is Student: {self.is_student}")
+        print(f'Is Student: {self.is_student}')
 
     def serialize(self, filename):
         """
-        Serialize the current object and save it to a file.
+        Serialize the current object to a file using pickle.
 
         Args:
-            filename (str): The file to save the serialized object.
+            filename (str): File to save the serialized object.
         """
         try:
             with open(filename, 'wb') as f:
                 pickle.dump(self, f)
         except (OSError, pickle.PickleError):
-            return None
+            pass  # Ignore errors silently
 
     @classmethod
     def deserialize(cls, filename):
         """
-        Deserialize a file and return an instance of CustomObject.
+        Deserialize a CustomObject from a file.
 
         Args:
-            filename (str): The file containing the serialized object.
+            filename (str): File containing the serialized object.
 
         Returns:
-            CustomObject or None: The deserialized object, or None if an error occurs.
+            CustomObject or None: The deserialized object,
+        or None if an error occurs.
         """
         try:
             with open(filename, 'rb') as f:
@@ -58,5 +63,5 @@ class CustomObject:
                 if isinstance(obj, cls):
                     return obj
                 return None
-        except (OSError, pickle.PickleError):
+        except (OSError, pickle.PickleError, EOFError):
             return None
