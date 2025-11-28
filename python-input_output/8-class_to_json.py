@@ -17,4 +17,3 @@ def class_to_json(obj):
         dict: Dictionary containing all simple data attributes of obj.
     """
     return obj.__dict__.copy()
-
