@@ -7,7 +7,9 @@ for JSON serialization of an object.
 
 
 def class_to_json(obj):
-    """Return a dictionary representation of obj suitable for JSON serialization.
+    """Return a dictionary representation
+    of obj suitable for JSON serialization.
+
     Args:
         obj (any): Instance of a class.
 
