@@ -5,6 +5,8 @@ Defines an empty BaseGeometry class.
 
 
 class BaseGeometry:
-    """Empty class representing base geometry."""
+    """
+    Empty class representing base geometry.
+    """
     pass
 
