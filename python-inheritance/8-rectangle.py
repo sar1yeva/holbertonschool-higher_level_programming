@@ -16,7 +16,8 @@ class BaseGeometry:
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
 
- def __init__(self, width, height):
+    def __init__(self, width, height):
+        """Instantiation with width and height"""
         self.width = width
         self.height = height
 
