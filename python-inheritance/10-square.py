@@ -1,23 +1,21 @@
 #!/usr/bin/python3
-"""Rectangle class that inherits from BaseGeometry."""
-BaseGeometry = __import__('9-base_geometry').BaseGeometry
+"""Square class that inherits from Rectangle."""
+Rectangle = __import__('9-rectangle').Rectangle
 
 
-class Rectangle(BaseGeometry):
-    """Rectangle with width and height."""
-
-    def __init__(self, width, height):
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
-        self.__width = width
-        self.__height = height
+class Square(Rectangle):
+    """Square class inheriting from Rectangle."""
 
     def __init__(self, size):
+        """
+        Initialize a square with a private size attribute.
+        """
         self.integer_validator("size", size)
         self.__size = size
+        super().__init__(size,size)
 
     def area(self):
-        return self.__width * self.__height
+        return self.__size * self.__size
 
     def __str__(self):
-        return "[Rectangle] {}/{}".format(self.__width, self.__height)
+        return "[Rectangle] {}/{}".format(self.__size, self.__size)
