@@ -1,3 +1,10 @@
 #!/usr/bin/python3
-class BaseGeometry():
-      pass
+"""
+Defines an empty BaseGeometry class.
+"""
+
+
+class BaseGeometry:
+    """Empty class representing base geometry."""
+    pass
+
