@@ -18,7 +18,7 @@ if __name__ == "__main__":
         # Send GET request with Basic Authentication
         response = requests.get(url, auth=(username, password))
 
-        # If authentication fails or other error, response.json() may not have 'id'
+# If authentication fails or other error, response.json() may not have 'id'
         if response.status_code == 200:
             user_data = response.json()
             print(user_data.get('id'))
