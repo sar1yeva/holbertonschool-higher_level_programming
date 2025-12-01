@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This script takes your GitHub username and personal access token (as password),
+This script takes your GitHub username and
+personal access token (as password),
 and uses the GitHub API to display your user ID.
 """
 
