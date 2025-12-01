@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """
-This script fetches the URL http://0.0.0.0:5050/status
+This script fetches the URL https://intranet.hbtn.io/status
 and displays the body of the response as a string.
 """
 
 import requests
 
-url = "http://0.0.0.0:5050/status"
+url = "https://intranet.hbtn.io/status"
 
 # Send a GET request
 response = requests.get(url)
