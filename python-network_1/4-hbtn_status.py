@@ -1,23 +1,20 @@
 #!/usr/bin/python3
 """
-This script fetches the URL https://intranet.hbtn.io/status
-and displays the body of the response with type, raw bytes,
-and UTF-8 decoded content.
+This script fetches the URL http://0.0.0.0:5050/status
+and displays the body of the response as a string.
 """
 
 import requests
 
-url = "https://intranet.hbtn.io/status"
+url = "http://0.0.0.0:5050/status"
 
-# Send a GET request and handle the response
+# Send a GET request
 response = requests.get(url)
 
-# Ensure the request was successful
-response.raise_for_status()  # Will raise an HTTPError if the request failed
+# Get response body as a string
+body = response.text
 
-body_bytes = response.content  # Raw bytes of the response
-
+# Display the output in the required format
 print("Body response:")
-print(f"\t- type: {type(body_bytes)}")
-print(f"\t- content: {body_bytes}")
-print(f"\t- utf8 content: {body_bytes.decode('utf-8')}")
+print(f"\t- type: {type(body)}")
+print(f"\t- content: {body}")
