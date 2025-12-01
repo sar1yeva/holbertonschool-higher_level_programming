@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
 This script takes in a URL, sends a GET request to the URL,
-and displays the value of the X-Request-Id variable found in the response header.
+and displays the value of the
+ X-Request-Id variable found in the response header.
 """
 
 import sys
